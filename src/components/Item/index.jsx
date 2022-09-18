@@ -8,7 +8,7 @@ export default class Item extends React.Component {
             <li>
                 <label>
                     <input type="checkbox" defaultChecked={done}/>
-                    <span>{id}={name}</span>
+                    <span>{name}</span>
                 </label>
                 <button className="btn btn-daner" style={{display: 'none'}}>delete</button>
             </li>
