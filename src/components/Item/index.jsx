@@ -8,16 +8,17 @@ export default class Item extends React.Component {
 
     render() {
         const {id, name, done} = this.props
+        const {mouse} = this.state
         return (
             <li onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}
-                style={{backgroundColor: this.state.mouse ? '#ddd' : '#fff'}}
+                style={{backgroundColor: mouse ? '#ddd' : '#fff'}}
             >
                 <label>
                     <input onChange={this.handleChange(id)} type="checkbox" defaultChecked={done}/>
                     <span>{name}</span>
                 </label>
                 <button className="btn btn-danger"
-                        style={{display: this.state.mouse ? 'block' : 'none'}}>delete
+                        style={{display: mouse ? 'block' : 'none'}}>delete
                 </button>
             </li>
         )
