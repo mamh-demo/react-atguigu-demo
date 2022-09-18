@@ -1,17 +1,21 @@
 import React from 'react'
-import Hello from "./components/Hello/Hello";
-import Ailala from "./components/Ailala/Ailala"
-import Welcome from "./components/Welcome/Welcome";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import List from "./components/List";
+import './App.css'
+
 
 export default class App extends React.Component {
 
 
     render() {
         return (
-            <div>
-                <Hello/>
-                <Ailala/>
-                <Welcome/>
+            <div className="todo-container">
+                <div className="todo-wrap">
+                    <Header/>
+                    <List/>
+                    <Footer/>
+                </div>
             </div>
         )
     }
