@@ -10,18 +10,26 @@ export default class Item extends React.Component {
         const {id, name, done} = this.props
         const {mouse} = this.state
         return (
-            <li onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}
+            <li onMouseEnter={this.handleMouse(true)}
+                onMouseLeave={this.handleMouse(false)}
                 style={{backgroundColor: mouse ? '#ddd' : '#fff'}}
             >
                 <label>
                     <input onChange={this.handleChange(id)} type="checkbox" defaultChecked={done}/>
                     <span>{name}</span>
                 </label>
-                <button className="btn btn-danger"
+                <button onClick={this.handleDelete(id)}
+                        className="btn btn-danger"
                         style={{display: mouse ? 'block' : 'none'}}>delete
                 </button>
             </li>
         )
+    }
+
+    handleDelete = (id) => {
+        return () => {
+            this.props.deleteTodo(id)
+        }
     }
 
     handleChange = (id) => {
