@@ -3,11 +3,12 @@ import './index.css'
 
 export default class Item extends React.Component {
     render() {
+        const {id, name, done} = this.props
         return (
             <li>
                 <label>
                     <input type="checkbox"/>
-                    <span>xxxx</span>
+                    <span>{id}---{name}----{done}</span>
                 </label>
                 <button className="btn btn-daner" style={{display: 'none'}}>delete</button>
             </li>
