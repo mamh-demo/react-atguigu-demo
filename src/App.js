@@ -8,9 +8,11 @@ import './App.css'
 export default class App extends React.Component {
     state = {
         todos: [
-            {id: 1, name: 'chifan', done: "true"},
-            {id: 2, name: 'shuijiao', done: "true"},
-            {id: 3, name: 'docode', done: "true"},
+            {id: 1, name: 'chifan', done: true},
+            {id: 2, name: 'shuijiao', done: true},
+            {id: 3, name: 'docode', done: false},
+            {id: 4, name: 'guangjie', done: false},
+            {id: 5, name: 'ailala', done: false},
         ]
     }
 
