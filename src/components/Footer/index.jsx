@@ -23,13 +23,16 @@ export default class Footer extends React.Component {
                 <span>
                     <span>已完成 {totalDone}</span> / 全部 {total}
                 </span>
-                <button className="btn btn-danger">清除已完成</button>
+                <button className="btn btn-danger" onClick={this.handleRemoveAll}>清除已完成</button>
             </div>
         )
     }
 
     handleCheckall = (e) => {
         this.props.checkAllTodo(e.target.checked)
+    }
+    handleRemoveAll = ()=>{
+        this.props.removeAllTodo()
     }
 
 }

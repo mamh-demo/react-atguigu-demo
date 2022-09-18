@@ -61,6 +61,7 @@ export default class App extends React.Component {
 
     }
 
+
     deleteTodo = (id) => {
         const {todos} = this.state
         const newtodos = todos.filter((todo) => {
@@ -73,6 +74,18 @@ export default class App extends React.Component {
 
     }
 
+    removeAllTodo = () => {
+        const {todos} = this.state
+        const newtodos = todos.filter((todo) => {
+            return !todo.done
+        })
+
+        this.setState({
+            todos: newtodos
+        })
+    }
+
+
     render() {
         return (
             <div className="todo-container">
@@ -84,6 +97,7 @@ export default class App extends React.Component {
                     />
                     <Footer todos={this.state.todos}
                             checkAllTodo={this.checkAllTodo}
+                            removeAllTodo={this.removeAllTodo}
 
                     />
                 </div>
