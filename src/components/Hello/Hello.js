@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
+import './Hello.css';
 
 export default class Hello extends React.Component {
     render() {
         return (
-            <h1>hello react</h1>
+            <h1 className="title">hello react</h1>
         )
     }
 
