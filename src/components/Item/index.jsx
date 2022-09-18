@@ -15,7 +15,7 @@ export default class Item extends React.Component {
                 style={{backgroundColor: mouse ? '#ddd' : '#fff'}}
             >
                 <label>
-                    <input onChange={this.handleChange(id)} type="checkbox" defaultChecked={done}/>
+                    <input onChange={this.handleChange(id)} type="checkbox" checked={done}/>
                     <span>{name}</span>
                 </label>
                 <button onClick={this.handleDelete(id)}

@@ -45,6 +45,22 @@ export default class App extends React.Component {
         })
     }
 
+    checkAllTodo = (d) => {
+        const {todos} = this.state
+        const newtodos = todos.map((todo) => {
+            return {
+                ...todo, done: d
+            }
+
+        })
+
+        this.setState({
+            todos: newtodos
+        })
+
+
+    }
+
     deleteTodo = (id) => {
         const {todos} = this.state
         const newtodos = todos.filter((todo) => {
@@ -66,7 +82,10 @@ export default class App extends React.Component {
                           updateTodo={this.updateTodo}
                           deleteTodo={this.deleteTodo}
                     />
-                    <Footer/>
+                    <Footer todos={this.state.todos}
+                            checkAllTodo={this.checkAllTodo}
+
+                    />
                 </div>
             </div>
         )
