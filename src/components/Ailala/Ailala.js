@@ -1,10 +1,11 @@
 import React from 'react'
 
+import './Ailala.css'
 
 export default class Ailala extends React.Component {
     render() {
         return (
-            <h1>hello Ailala</h1>
+            <h1 className="ailala">hello Ailala</h1>
         )
     }
 
