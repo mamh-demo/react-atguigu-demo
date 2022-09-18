@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
             <div className="todo-footer">
                 <label>
                     <input type="checkbox" onChange={this.handleCheckall}
-                           checked={total === totalDone && total != 0}/>
+                           checked={total === totalDone && total !== 0}/>
                 </label>
                 <span>
                     <span>已完成 {totalDone}</span> / 全部 {total}
