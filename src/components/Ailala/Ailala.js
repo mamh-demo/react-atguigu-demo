@@ -16,7 +16,7 @@ export default class Ailala extends React.Component {
 
     getStuData = () => {
         console.log("getStuData      ")
-        axios.get("http://localhost:3000/api1/students").then(
+        axios.get("http://localhost:5000/students").then(
             response => {
                 console.log(response.data)
             },
@@ -30,7 +30,7 @@ export default class Ailala extends React.Component {
 
     getCarData = () => {
         console.log("getCarData")
-        axios.get("http://localhost:3000/api2/cars").then(
+        axios.get("http://localhost:5001/cars").then(
             response => {
                 console.log(response.data)
             },
