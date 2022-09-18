@@ -16,7 +16,9 @@ export default class Item extends React.Component {
                     <input onChange={this.handleChange(id)} type="checkbox" defaultChecked={done}/>
                     <span>{name}</span>
                 </label>
-                <button className="btn btn-daner" style={{display: 'none'}}>delete</button>
+                <button className="btn btn-danger"
+                        style={{display: this.state.mouse ? 'block' : 'none'}}>delete
+                </button>
             </li>
         )
     }
