@@ -28,7 +28,8 @@ export default class Item extends React.Component {
 
     handleDelete = (id) => {
         return () => {
-            this.props.deleteTodo(id)
+            if (window.confirm("delete???"))
+                this.props.deleteTodo(id)
         }
     }
 
