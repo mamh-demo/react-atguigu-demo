@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import List from "./components/List";
 import './App.css'
+import Ailala from "./components/Ailala/Ailala";
 
 
 export default class App extends React.Component {
@@ -100,6 +101,7 @@ export default class App extends React.Component {
                             removeAllTodo={this.removeAllTodo}
 
                     />
+                    <Ailala/>
                 </div>
             </div>
         )
