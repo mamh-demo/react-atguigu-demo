@@ -21,6 +21,7 @@ export default class Search extends React.Component {
         axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
             response => {
                 console.log("success", response.data)
+                this.props.saveUsers(response.data.items)
             },
             error => {
                 console.log("error", error)
