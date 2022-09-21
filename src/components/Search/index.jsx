@@ -8,35 +8,30 @@ export default class Search extends React.Component {
             <section className="jumbotron">
                 <h3 className="jumbotron-heading">Search Github Users</h3>
                 <div>
-                    <input ref={c=> this.keyWordElement = c} type="text" placeholder="enter the name you search"/>&nbsp;
+                    <input ref={c => this.keyWordElement = c} type="text"
+                           placeholder="enter the name you search"/>&nbsp;
                     <button onClick={this.search}>Search</button>
                 </div>
             </section>
         )
     }
 
-    search = ()=>{
+    search = () => {
         //js的解构赋值
-        const {keyWordElement:{value: keyWord}} = this
+        const {keyWordElement: {value: keyWord}} = this
+        this.props.updateAppState({isFirst: false, isLoading: true});
+
         axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
             response => {
-                console.log("success", response.data)
-                this.props.saveUsers(response.data.items)
+                this.props.updateAppState({users: response.data.items, isLoading: false})
             },
             error => {
-                console.log("error", error)
+                this.props.updateAppState({err: error, isLoading: false})
             }
         )
 
 
-
-
-
-
     }
-
-
-
 
 
 }
