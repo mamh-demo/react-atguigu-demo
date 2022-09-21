@@ -26,7 +26,7 @@ export default class Search extends React.Component {
                 this.props.updateAppState({users: response.data.items, isLoading: false})
             },
             error => {
-                this.props.updateAppState({err: error, isLoading: false})
+                this.props.updateAppState({err: error.message, isLoading: false})
             }
         )
 
