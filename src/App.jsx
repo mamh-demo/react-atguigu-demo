@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link,  BrowserRouter, Route} from 'react-router-dom'
+import {NavLink,  BrowserRouter, Route} from 'react-router-dom'
 import Home from "./components/Home"
 import About from "./components/About"
 
@@ -27,8 +27,8 @@ export default class App extends React.Component {
                 {/*<a className="list-group-item active" href="./home.html">Home</a>*/}
 
                 {/*在react中考 路由链接实现切换 Component*/}
-                <Link className="list-group-item" to="/about">About</Link>
-                <Link className="list-group-item" to="/home">Home</Link>
+                <NavLink className="list-group-item" to="/about">About</NavLink>
+                <NavLink className="list-group-item" to="/home">Home</NavLink>
 
             </div>
         </div>
