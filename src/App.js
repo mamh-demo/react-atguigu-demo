@@ -1,4 +1,7 @@
 import React from 'react'
+import {Link,  BrowserRouter, Route} from 'react-router-dom'
+import Home from "./components/Home"
+import About from "./components/About"
 
 import './App.css'
 
@@ -15,19 +18,32 @@ export default class App extends React.Component {
         </div>
     </div>
     <div className="row">
+        <BrowserRouter>
+
         <div className="col-xs-2 col-xs-offset-2">
             <div className="list-group">
-                <a className="list-group-item" href="./about.html">About</a>
-                <a className="list-group-item active" href="./home.html">Home</a>
+                {/* 原生html中靠 a标签跳转不同的页面 */}
+                {/*<a className="list-group-item" href="./about.html">About</a>*/}
+                {/*<a className="list-group-item active" href="./home.html">Home</a>*/}
+
+                {/*在react中考 路由链接实现切换 Component*/}
+                <Link className="list-group-item" to="/about">About</Link>
+                <Link className="list-group-item" to="/home">Home</Link>
+
             </div>
         </div>
+
         <div className="col-xs-6">
             <div className="panel">
                 <div className="panel-body">
-                    <h3>我是Home的内容</h3>
+                    <Route path="/about" component={About}/>
+                    <Route path="/home" component={Home}/>
                 </div>
             </div>
         </div>
+        </BrowserRouter>
+
+
     </div>
 </div>
         )
