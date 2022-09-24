@@ -9,25 +9,13 @@ import './App.css'
 
 
 export default class App extends React.Component {
-    state = {
-        users: [],
-        isFirst: true,
-        isLoading: false,
-        err: '',
 
-
-    }
-
-    updateAppState = (s) =>{
-        this.setState(s)
-    }
 
     render() {
-        const {users} = this.state
         return (
             <div className="container">
-                <Search updateAppState={this.updateAppState}/>
-                <List {...this.state}/>
+                <Search/>
+                <List/>
             </div>
         )
     }
