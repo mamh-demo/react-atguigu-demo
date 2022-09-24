@@ -9,17 +9,11 @@ export default class List extends React.Component {
         err: '',
     }
 
-    updateAppState = (s) => {
-        this.setState(s)
-    }
 
     componentDidMount() {
         PubSub.subscribe('ailala', (_, data) => {
             this.setState(data)
-            console.log(data)
         });
-
-
     }
 
 

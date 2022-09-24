@@ -23,19 +23,14 @@ export default class Search extends React.Component {
 
         //js的解构赋值
         const {keyWordElement: {value: keyWord}} = this
-        //this.props.updateAppState();
         PubSub.publish('ailala', {isFirst: false, isLoading: true})
 
         axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
             response => {
-                //this.props.updateAppState({users: response.data.items, isLoading: false})
                 PubSub.publish('ailala', {users: response.data.items, isLoading: false})
-
             },
             error => {
-                //this.props.updateAppState({err: error.message, isLoading: false})
                 PubSub.publish('ailala', {err: error.message, isLoading: false})
-
             }
         )
 
