@@ -82,14 +82,7 @@ export default class Search extends React.Component {
             }
         )
 
-        // try {
-        //     const response = await fetch(`http://localhost:3000/api1/search/users2?q=${keyWord}`)
-        //     const data = await response.json()
-        //     PubSub.publish('ailala', {users: data.items, isLoading: false})
-        // } catch (error) {
-        //     console.log(error)
-        //     PubSub.publish('ailala', {err: error.message, isLoading: false})
-        // }
+
 
 
     }

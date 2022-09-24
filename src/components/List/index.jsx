@@ -11,9 +11,13 @@ export default class List extends React.Component {
 
 
     componentDidMount() {
-        PubSub.subscribe('ailala', (_, data) => {
+        this.token = PubSub.subscribe('ailala', (_, data) => {
             this.setState(data)
         });
+    }
+
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token);
     }
 
 
