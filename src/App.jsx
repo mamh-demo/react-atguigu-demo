@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Redirect} from 'react-router-dom'
+import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
 
 
 import Home from "./components/Home"
@@ -38,9 +38,12 @@ export default class App extends React.Component {
         <div className="col-xs-6">
             <div className="panel">
                 <div className="panel-body">
+                    <Switch>
+
                     <Route path="/about" component={About}/>
                     <Route path="/home" component={Home}/>
-                    <Redirect to={"/home"}/>
+                    <Redirect to="/home"/>
+                    </Switch>
                 </div>
             </div>
         </div>
