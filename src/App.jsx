@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Redirect} from 'react-router-dom'
+
+
 import Home from "./components/Home"
 import About from "./components/About"
 import AiNavLink from "./components/AiNavLink";
@@ -38,6 +40,7 @@ export default class App extends React.Component {
                 <div className="panel-body">
                     <Route path="/about" component={About}/>
                     <Route path="/home" component={Home}/>
+                    <Redirect to={"/home"}/>
                 </div>
             </div>
         </div>
