@@ -25,7 +25,13 @@ messageArr.map((msgObj) => {
     return(
         <li  key={msgObj.id}>
             {/*向路由组件传递 params参数*/}
-            <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link>
+            <Link to={ {
+                pathname: '/home/message/detail',
+                state:{
+                    id: msgObj.id,
+                    title: msgObj.title
+                }}
+            }>{msgObj.title}</Link>
         </li>
     )
 })
@@ -36,7 +42,7 @@ messageArr.map((msgObj) => {
     <hr/>
     <Switch>
         {/*声明接收 params参数*/}
-        <Route path="/home/message/detail/:id/:title" component={Detail}/>
+        <Route path="/home/message/detail" component={Detail}/>
     </Switch>
 </div>
         )

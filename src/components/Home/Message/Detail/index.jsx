@@ -3,7 +3,8 @@ import React from 'react'
 
 export default class Detail extends React.Component {
     render() {
-        const {id,title} = this.props.match.params
+        console.log(this.props)
+        const {id,title} = this.props.location.state || {}
         return (
 <div>
     <h4>Message组件内容Detail</h4>
