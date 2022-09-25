@@ -30,8 +30,8 @@ export default class App extends React.Component {
                 {/*<a className="list-group-item active" href="./home.html">Home</a>*/}
 
                 {/*在react中考 路由链接实现切换 Component*/}
-                <AiNavLink to="/about">About...</AiNavLink>
                 <AiNavLink to="/home">Home</AiNavLink>
+                <AiNavLink to="/about">About...</AiNavLink>
             </div>
         </div>
 
@@ -39,9 +39,8 @@ export default class App extends React.Component {
             <div className="panel">
                 <div className="panel-body">
                     <Switch>
-
-                    <Route path="/about" component={About}/>
                     <Route path="/home" component={Home}/>
+                    <Route path="/about" component={About}/>
                     <Redirect to="/home"/>
                     </Switch>
                 </div>
