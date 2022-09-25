@@ -1,23 +1,43 @@
 import React from 'react'
+import {Link, Redirect, Route, Switch} from "react-router-dom";
 
+import Detail from "./Detail";
 
 export default class Message extends React.Component {
-    render() {
 
+    state = {
+        messageArr:[
+            {id:"01", title:"xxxx1"},
+            {id:"02", title:"xxxx2"},
+            {id:"03", title:"xxxx3"},
+            {id:"04", title:"xxxx4"},
+        ]
+    }
+
+    render() {
+        const {messageArr} = this.state
         return (
 <div>
-<h2>Message组件内容</h2>
+<h3>Message组件内容</h3>
     <ul>
-        <li>
-            <a href="/message1">message001</a>&nbsp;&nbsp;
+{
+messageArr.map((msgObj) => {
+    return(
+        <li  key={msgObj.id}>
+            {/*向路由组件传递 params参数*/}
+            <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link>
         </li>
-        <li>
-            <a href="/message2">message002</a>&nbsp;&nbsp;
-        </li>
-        <li>
-            <a href="/message/3">message003</a>&nbsp;&nbsp;
-        </li>
+    )
+})
+
+
+}
     </ul>
+    <hr/>
+    <Switch>
+        {/*声明接收 params参数*/}
+        <Route path="/home/message/detail/:id/:title" component={Detail}/>
+    </Switch>
 </div>
         )
     }
