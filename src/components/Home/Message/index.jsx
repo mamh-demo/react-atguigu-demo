@@ -32,6 +32,8 @@ messageArr.map((msgObj) => {
                     title: msgObj.title
                 }}
             }>{msgObj.title}</Link>
+            <button>push</button>
+            <button>replace</button>
         </li>
     )
 })
