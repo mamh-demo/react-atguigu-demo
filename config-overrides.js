@@ -7,13 +7,23 @@
 // 引入 react-app-rewired 并修改 package.json 里的启动配置。由于新
 //的 react-app-rewired@2.x 版本的关系，你还需要安装 customize-cra。
 
-const {override, fixBabelImports} = require('customize-cra');
+const {override, fixBabelImports, addLessLoader, adjustStyleLoaders} = require('customize-cra');
 
 
 module.exports = override(
     fixBabelImports('import', {
         libraryName: 'antd',
         libraryDirectory: 'es',
-        style: 'css',
+        style: true,
     }),
+    addLessLoader({
+        lessOptions: {
+            javascriptEnabled: true,
+            modifyVars: {'@primary-color': '#1DA57A'},
+        }
+    }),
+    adjustStyleLoaders(({use:[,,  postcss] }) => {
+        const postcssOptions  = postcss.options;
+        postcss.options = { postcssOptions };
+    })
 );
