@@ -1,7 +1,11 @@
 import React from 'react'
-import {Link, Redirect, Route, Switch} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
+import { Button } from 'antd';
 
 import Detail from "./Detail";
+
+import 'antd/dist/antd.min.css';
+
 
 export default class Message extends React.Component {
 
@@ -32,8 +36,11 @@ messageArr.map((msgObj) => {
                     title: msgObj.title
                 }}
             }>{msgObj.title}</Link>
-            <button>push</button>
-            <button>replace</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Button type="primary">push</Button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Button type="primary">replace</Button>
+
         </li>
     )
 })
