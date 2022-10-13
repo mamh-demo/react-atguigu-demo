@@ -6,7 +6,6 @@ import {SearchOutlined, WechatOutlined} from "@ant-design/icons";
 
 import Detail from "./Detail";
 
-import 'antd/dist/antd.min.css';
 
 import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
