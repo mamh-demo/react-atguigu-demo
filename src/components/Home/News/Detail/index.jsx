@@ -1,5 +1,5 @@
 import React from 'react'
-import  querystring from 'querystring'
+import queryString from 'query-string'
 
 export default class Detail extends React.Component {
     render() {
@@ -8,7 +8,7 @@ export default class Detail extends React.Component {
 
         // 接收 search 参数
         const {search} = this.props.location
-        const {id, title} = querystring.parse(search.slice(1))
+        const {id, title} = queryString.parse(search.slice(1))
 
         return (
 <div>
