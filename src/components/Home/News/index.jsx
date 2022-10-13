@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, Route, Switch} from "react-router-dom";
 
 import Detail from "../News/Detail";
+import {Button} from "antd";
 
 
 export default class News extends React.Component {
@@ -33,6 +34,11 @@ export default class News extends React.Component {
             <Link to="/home/news/detail/?id=01&title=news001">news001</Link>
             <button onClick={()=> this.replaceShow("01", "news001")}>push</button>
             <button onClick={()=> this.pushShow("01", "news001")}> replace</button>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Button type="primary" onClick={()=> this.replaceShow("01", "news001")}>push</Button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Button type="primary" onClick={()=> this.pushShow("01", "news001")}>replace</Button>
         </li>
         <li  key={2}>
             {/*向路由组件传递 search 参数*/}
