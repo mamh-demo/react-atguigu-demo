@@ -4,6 +4,7 @@ import {Link, Route, Switch} from "react-router-dom";
 import Detail from "../News/Detail";
 import {Button} from "antd";
 
+import 'antd/dist/antd.min.css';
 
 export default class News extends React.Component {
     replaceShow = (id, title)=>{
