@@ -1,20 +1,28 @@
 import React from 'react'
 import {Link, Route, Switch} from "react-router-dom";
-import { Button } from 'antd';
+
+import {Button, Tooltip} from 'antd';
+import {SearchOutlined, WechatOutlined} from "@ant-design/icons";
 
 import Detail from "./Detail";
 
 import 'antd/dist/antd.min.css';
 
+import { DatePicker } from 'antd';
+const { RangePicker } = DatePicker;
+
+function onChange(date, dateString){
+    console.log(date, dateString);
+}
 
 export default class Message extends React.Component {
 
     state = {
         messageArr:[
-            {id:"01", title:"xxxx1"},
-            {id:"02", title:"xxxx2"},
-            {id:"03", title:"xxxx3"},
-            {id:"04", title:"xxxx4"},
+            {id:"01", title:"xxxx1Button"},
+            {id:"02", title:"xxxx2Tooltip"},
+            {id:"03", title:"xxxx3SearchOutlined"},
+            {id:"04", title:"xxxx4WechatOutlined"},
         ]
     }
 
@@ -36,10 +44,6 @@ messageArr.map((msgObj) => {
                     title: msgObj.title
                 }}
             }>{msgObj.title}</Link>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button type="primary">push</Button>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button type="primary">replace</Button>
 
         </li>
     )
@@ -53,6 +57,37 @@ messageArr.map((msgObj) => {
         {/*声明接收 params参数*/}
         <Route path="/home/message/detail" component={Detail}/>
     </Switch>
+
+    <hr/>
+    <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+    <hr/>
+    <Button type="primary" shape="circle">push</Button>
+    <hr/>
+    <Button type="primary">replace</Button>
+    <hr/>
+    <Button type="dashed">dashed button</Button>
+    <hr/>
+    <WechatOutlined/>
+    <hr/>
+    <Button type="primary" shape="round">
+        A <SearchOutlined/><WechatOutlined/>
+    </Button>
+    <hr/>
+    <Button type="primary" icon={<SearchOutlined />}>
+        Search
+    </Button>
+    <hr/>
+    <Button icon={<SearchOutlined />}>Search</Button>
+    <hr/>
+    <DatePicker onChange={onChange} /><br />
+    <DatePicker onChange={onChange} picker="week" /><br />
+    <DatePicker onChange={onChange} picker="month" /><br />
+    <DatePicker onChange={onChange} picker="quarter" /><br />
+    <DatePicker onChange={onChange} picker="year" /><br />
+    <RangePicker/>
+    <br />
+
+
 </div>
         )
     }
