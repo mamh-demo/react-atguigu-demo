@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
 
 import Home from "./components/Home"
 import About from "./components/About"
+import Redux from "./components/Redux";
 import AiNavLink from "./components/AiNavLink";
 
 import './App.css'
@@ -32,6 +33,7 @@ export default class App extends React.Component {
                 {/*在react中考 路由链接实现切换 Component*/}
                 <AiNavLink to="/home">Home</AiNavLink>
                 <AiNavLink to="/about">About...</AiNavLink>
+                <AiNavLink to="/redux">Redux...</AiNavLink>
             </div>
         </div>
 
@@ -41,6 +43,7 @@ export default class App extends React.Component {
                     <Switch>
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/redux" component={Redux}/>
                     <Redirect to="/home"/>
                     </Switch>
                 </div>
