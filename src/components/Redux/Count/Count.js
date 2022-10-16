@@ -8,16 +8,16 @@ import './Count.css';
 
 export default class Count extends React.Component {
 
-    componentDidMount() {
-        // 利用 componentDidMount 方法添加一个 监听器，用来 检测 redux 中状态的变化，只要变化就调用render。其实就是 调用了 this.setState({}) 方法，里面传入一个空的对象，只要调用 setState 就会更新 state
-        store.subscribe(
-            ()=>{
-                this.setState({})
-            }
-        )
-
-
-    }
+    // componentDidMount() {
+    //     // 利用 componentDidMount 方法添加一个 监听器，用来 检测 redux 中状态的变化，只要变化就调用render。其实就是 调用了 this.setState({}) 方法，里面传入一个空的对象，只要调用 setState 就会更新 state
+    //     store.subscribe(
+    //         ()=>{
+    //             this.setState({})
+    //         }
+    //     )
+    //
+    //
+    // }
 
     increment = () => {
         const {value} = this.selectNumber
