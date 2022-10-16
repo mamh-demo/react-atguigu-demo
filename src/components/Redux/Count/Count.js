@@ -1,40 +1,57 @@
 import React from 'react';
 import {Button} from 'antd';
 
+import store from '../../../redux/store'
 
 import './Count.css';
 
 
 export default class Count extends React.Component {
-    state = {total: 0}
+
+    componentDidMount() {
+        // 利用 componentDidMount 方法添加一个 监听器，用来 检测 redux 中状态的变化，只要变化就调用render。其实就是 调用了 this.setState({}) 方法，里面传入一个空的对象，只要调用 setState 就会更新 state
+        store.subscribe(
+            ()=>{
+                this.setState({})
+            }
+        )
 
 
+    }
 
     increment = () => {
         const {value} = this.selectNumber
-        const {total} = this.state
-        this.setState({total: total+value*1})
+        store.dispatch({
+            "type":'increment',
+            "data": value,
+        })
     }
 
     decrement = () => {
         const {value} = this.selectNumber
-        const {total} = this.state
-
-        this.setState({total: total-value*1})
+        store.dispatch({
+            "type":'decrement',
+            "data": value,
+        })
     }
     incrementIfOdd = () => {
         const {value} = this.selectNumber
-        const {total} = this.state
+        const total = store.getState()
         if((total % 2) !== 0){
-            this.setState({total: total+value*1})
+            store.dispatch({
+                "type":'increment',
+                "data": value,
+            })
         }
     }
 
     incrementAsync = () => {
         const {value} = this.selectNumber
-        const {total} = this.state
         setTimeout(()=>{
-            this.setState({total: total+value*1})
+            store.dispatch({
+                "type":'increment',
+                "data": value,
+            })
         }, 5000)
     }
 
@@ -42,8 +59,8 @@ export default class Count extends React.Component {
     render() {
         return (
 <div>
-    <h3>当前求和是：{this.state.total}</h3>
-    <select defaultValue={1} ref={ c => this.selectNumber=c }>
+    <h3>当前求和是：{store.getState()}</h3>
+    <select   ref={ c => this.selectNumber=c }>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
