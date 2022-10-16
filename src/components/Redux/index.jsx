@@ -5,6 +5,7 @@ import Count from "./Count";
 
 
 import CountContainer from "../../containers/Count";
+import Personontainer from "../../containers/Person";
 
 
 export default class Redux extends React.Component {
@@ -18,7 +19,8 @@ export default class Redux extends React.Component {
     <Count/>
     <hr/>
     <CountContainer/>
-
+    <hr/>
+    <Personontainer/>
 </div>
 </div>
         )
