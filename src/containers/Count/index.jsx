@@ -58,25 +58,16 @@ class CountUI extends React.Component {
 }
 
 
-function mapStateToProps(state) {
-    return {count: state.he}
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        jia: (num) => {
-            dispatch(createIncrementAction(num))
-        },
-        jian: (num) => {
-            dispatch(createDecrementAction(num))
-        },
-        asyncjia: (num, time) => {
-            dispatch(createIncrementAsyncAction(num, time))
-        },
+const CountContainer = connect(
+    state => ({
+        count: state.he
+    }),
+    {
+        jia: createIncrementAction,
+        jian: createDecrementAction,
+        asyncjia: createIncrementAsyncAction,
     }
-}
-
-const CountContainer = connect(mapStateToProps, mapDispatchToProps)(CountUI)
+)(CountUI)
 
 
 export default CountContainer
