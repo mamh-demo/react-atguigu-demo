@@ -6,7 +6,7 @@ import {
     createIncrementAction,
     createDecrementAction,
     createIncrementAsyncAction
-} from '../../../redux/count_action'
+} from '../../../redux/actions/count'
 import './index.css';
 
 
