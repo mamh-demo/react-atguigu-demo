@@ -1,10 +1,8 @@
 import {DECREMENT, INCREMENT} from '../constant'
 
-function countReducer(preState, action) {
-    if (preState === undefined) {
-        preState = 0
-    }
+const initState = 0
 
+function countReducer(preState = initState, action) {
     const {type, data} = action
     switch (type) {
         case INCREMENT:
@@ -12,7 +10,7 @@ function countReducer(preState, action) {
         case DECREMENT:
             return preState - data * 1;
         default:
-            return 0
+            return preState
     }
 
 }
