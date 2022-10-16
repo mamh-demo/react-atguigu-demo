@@ -3,6 +3,7 @@ import React from 'react'
 import './index.css'
 import Count from "./Count";
 
+import CountUI from "./CountUI";
 
 
 export default class Redux extends React.Component {
@@ -14,6 +15,8 @@ export default class Redux extends React.Component {
     <hr/>
 <div>
     <Count/>
+    <hr/>
+    <CountUI/>
 </div>
 </div>
         )
