@@ -59,7 +59,7 @@ class CountUI extends React.Component {
 
 
 function mapStateToProps(state) {
-    return {count: state}
+    return {count: state.he}
 }
 
 function mapDispatchToProps(dispatch) {
