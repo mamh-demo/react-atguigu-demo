@@ -2,7 +2,11 @@ import React from 'react';
 import {Button} from 'antd';
 
 import store from '../../../redux/store'
-import { createIncrementAction, createDecrementAction } from '../../../redux/count_action'
+import {
+    createIncrementAction,
+    createDecrementAction,
+    createIncrementAsyncAction
+} from '../../../redux/count_action'
 import './Count.css';
 
 
@@ -48,12 +52,7 @@ export default class Count extends React.Component {
 
     incrementAsync = () => {
         const {value} = this.selectNumber
-        setTimeout(()=>{
-            store.dispatch({
-                "type":'increment',
-                "data": value,
-            })
-        }, 5000)
+        store.dispatch(createIncrementAsyncAction(value, 5000))
     }
 
 
