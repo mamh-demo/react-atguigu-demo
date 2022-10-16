@@ -7,7 +7,7 @@ import {
     createDecrementAction,
     createIncrementAsyncAction
 } from '../../../redux/count_action'
-import './Count.css';
+import './index.css';
 
 
 export default class Count extends React.Component {
