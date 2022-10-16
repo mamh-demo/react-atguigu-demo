@@ -38,7 +38,7 @@ class CountUI extends React.Component {
     render() {
         return (
             <div>
-                <h3>countUI当前求和是： {this.props.count}</h3>
+                <h3>countUI当前求和是： {this.props.count}, rens len: {this.props.renshu}</h3>
                 <select ref={c => this.selectNumber = c}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -60,7 +60,8 @@ class CountUI extends React.Component {
 
 const CountContainer = connect(
     state => ({
-        count: state.he
+        count: state.he,
+        renshu: state.rens.length,
     }),
     {
         jia: createIncrementAction,
