@@ -81,3 +81,18 @@ const CountContainer = connect(mapStateToProps, mapDispatchToProps)(CountUI)
 
 export default CountContainer
 
+
+/*
+
+一个组件要和redux打交道要经过那几步？
+1.定义好UI组件，不暴露
+2.引入 connect 生成一个组件容器，并暴露，写法如下
+connect（
+    state => ( {key: value} ) , // 映射状态
+    {key: xxxAction} ,          // 映射操作状态的方法
+）（UI组件类名）
+3.在 UI 组件 中通过 this.prop.xxx 读取和操作状态。
+
+ */
+
+
