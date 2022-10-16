@@ -59,7 +59,7 @@ export default class Count extends React.Component {
     render() {
         return (
 <div>
-    <h3>当前求和是：{store.getState()}</h3>
+    <h3>当前求和是： </h3>
     <select   ref={ c => this.selectNumber=c }>
         <option value="1">1</option>
         <option value="2">2</option>
