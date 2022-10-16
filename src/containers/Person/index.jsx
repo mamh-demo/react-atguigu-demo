@@ -1,15 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {nanoid} from "nanoid";
+import {createAddPersonAction} from "../../redux/actions/person";
 
 import './index.css';
+
 
 class PersonUI extends React.Component {
 
     addPerson = () => {
         const name = this.nameNode;
         const age = this.ageNode;
-
-
+        const personObj = {id: nanoid(), name: name.value, age: age.value}
+        this.props.add_person(personObj)
     }
 
     render() {
@@ -18,7 +21,9 @@ class PersonUI extends React.Component {
                 <h3>PersonUI</h3>
                 <input ref={c => this.nameNode = c} type="text" placeholder="input name"/>&nbsp;
                 <input ref={c => this.ageNode = c} type="text" placeholder="input age"/>&nbsp;
-                <button onClick={this.addPerson}>add person</button>&nbsp;
+                <button onClick={this.addPerson}>add person</button>
+                &nbsp;
+                <br/>
             </div>
         )
     }
@@ -28,11 +33,15 @@ class PersonUI extends React.Component {
 
 
 function mapStateToProps(state) {
-    return {count: state}
+    return {persons: state.rens}
 }
 
 function mapDispatchToProps(dispatch) {
-    return {}
+    return {
+        add_person: (personObj)=>{
+            dispatch(createAddPersonAction(personObj))
+        }
+    }
 }
 
 const Personontainer = connect(mapStateToProps, mapDispatchToProps)(PersonUI)
