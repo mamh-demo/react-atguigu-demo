@@ -5,6 +5,9 @@ import Count from "./Count";
 
 import CountUI from "./CountUI";
 
+import CountContainer from "../../containers/Count";
+import store from "../../redux/store";
+
 
 export default class Redux extends React.Component {
     render() {
@@ -16,7 +19,8 @@ export default class Redux extends React.Component {
 <div>
     <Count/>
     <hr/>
-    <CountUI/>
+    <CountContainer store={store}/>
+
 </div>
 </div>
         )
