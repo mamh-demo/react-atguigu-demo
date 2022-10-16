@@ -24,6 +24,13 @@ class PersonUI extends React.Component {
                 <button onClick={this.addPerson}>add person</button>
                 &nbsp;
                 <br/>
+                <ul>
+                    {
+                        this.props.persons.map((p) => {
+                            return (<li key={p.id}>{p.name} ==== {p.age} === {this.props.count}</li>)
+                        })
+                    }
+                </ul>
             </div>
         )
     }
@@ -34,7 +41,8 @@ class PersonUI extends React.Component {
 
 const Personontainer = connect(
     state => ({
-        persons: state.rens
+        persons: state.rens,
+        count: state.he
     })
     ,
     {
