@@ -32,19 +32,15 @@ class PersonUI extends React.Component {
 }
 
 
-function mapStateToProps(state) {
-    return {persons: state.rens}
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        add_person: (personObj)=>{
-            dispatch(createAddPersonAction(personObj))
-        }
+const Personontainer = connect(
+    state => ({
+        persons: state.rens
+    })
+    ,
+    {
+        add_person: createAddPersonAction,
     }
-}
-
-const Personontainer = connect(mapStateToProps, mapDispatchToProps)(PersonUI)
+)(PersonUI)
 
 
 export default Personontainer
