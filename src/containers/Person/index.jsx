@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {nanoid} from "nanoid";
-import {createAddPersonAction} from "../../redux/actions/person";
+import {addPerson} from "../../redux/actions/person";
 
 import './index.css';
 
@@ -12,7 +12,7 @@ class PersonUI extends React.Component {
         const name = this.nameNode;
         const age = this.ageNode;
         const personObj = {id: nanoid(), name: name.value, age: age.value}
-        this.props.add_person(personObj)
+        this.props.addPerson(personObj)
     }
 
     render() {
@@ -46,7 +46,7 @@ const PersonContainer = connect(
     })
     ,
     {
-        add_person: createAddPersonAction,
+        addPerson,
     }
 )(PersonUI)
 
