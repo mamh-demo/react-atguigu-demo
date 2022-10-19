@@ -4,9 +4,9 @@ import {Button} from 'antd';
 
 import {connect} from 'react-redux'
 import {
-    createDecrementAction,
-    createIncrementAction,
-    createIncrementAsyncAction
+    inc,
+    dec,
+    incAsync
 } from "../../redux/actions/count";
 
 import './index.css';
@@ -14,24 +14,23 @@ import './index.css';
 class CountUI extends React.Component {
     increment = () => {
         const {value} = this.selectNumber
-        this.props.jia(value)
+        this.props.inc(value)
     }
 
     decrement = () => {
         const {value} = this.selectNumber
-        this.props.jian(value)
-
+        this.props.dec(value)
     }
     incrementIfOdd = () => {
         const {value} = this.selectNumber
         if (this.props.count % 2 !== 0) {
-            this.props.jia(value)
+            this.props.inc(value)
         }
     }
 
     incrementAsync = () => {
         const {value} = this.selectNumber
-        this.props.asyncjia(value, 500)
+        this.props.incAsync(value, 500)
     }
 
 
@@ -64,9 +63,9 @@ const CountContainer = connect(
         personsLength: state.persons.length,
     }),
     {
-        jia: createIncrementAction,
-        jian: createDecrementAction,
-        asyncjia: createIncrementAsyncAction,
+        inc, //对象 key 和value 重名了，触发简写方式
+        dec,
+        incAsync,
     }
 )(CountUI)
 
