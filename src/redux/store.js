@@ -8,8 +8,8 @@ import personReducer from "./reducers/person";
 
 const allReducers = combineReducers(
     {
-        he: countReducer,
-        rens: personReducer
+        count: countReducer,
+        persons: personReducer
     }
 )
 
