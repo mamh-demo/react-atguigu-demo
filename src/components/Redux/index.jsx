@@ -4,8 +4,8 @@ import './index.css'
 import Count from "./Count";
 
 
-import CountContainer from "../../containers/Count";
-import Personontainer from "../../containers/Person";
+import CountContainer from "../../containers/Count";  // 引入容器组件，而不是UI组件
+import PersonContainer from "../../containers/Person";
 
 
 export default class Redux extends React.Component {
@@ -20,7 +20,7 @@ export default class Redux extends React.Component {
     <hr/>
     <CountContainer/>
     <hr/>
-    <Personontainer/>
+    <PersonContainer/>
 </div>
 </div>
         )

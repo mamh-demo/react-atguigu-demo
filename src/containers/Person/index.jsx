@@ -39,7 +39,7 @@ class PersonUI extends React.Component {
 }
 
 
-const Personontainer = connect(
+const PersonContainer = connect(
     state => ({
         persons: state.rens,
         count: state.he
@@ -51,7 +51,7 @@ const Personontainer = connect(
 )(PersonUI)
 
 
-export default Personontainer
+export default PersonContainer
 
 
 /*
