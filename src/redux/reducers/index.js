@@ -1,13 +1,13 @@
 import {combineReducers} from 'redux'
 
 
-import countReducer from './count'
-import personReducer from "./person"
+import count from './count'
+import persons from "./person"
 
 const allReducers = combineReducers(
     {
-        count: countReducer,
-        persons: personReducer
+        count,
+        persons,
     }
 )
 
