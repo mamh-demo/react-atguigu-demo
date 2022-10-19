@@ -2,5 +2,5 @@
 
 import {ADDPERSON} from '../constant'
 
-export const createAddPersonAction = personObj => ({type: ADDPERSON, data: personObj})
+export const addPerson = personObj => ({type: ADDPERSON, data: personObj})
 
