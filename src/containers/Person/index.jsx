@@ -41,8 +41,8 @@ class PersonUI extends React.Component {
 
 const PersonContainer = connect(
     state => ({
-        persons: state.rens,
-        count: state.he
+        persons: state.persons,
+        count: state.count
     })
     ,
     {
